@@ -1,0 +1,77 @@
+/*
+    Pablo Pérez Saavedra
+    UO288816
+    gama cromatica 
+
+    Scallop Seashell
+    #e7d2cc
+
+    Pewter
+    #b9b7bd
+
+    Gray
+    #868b8e
+
+    Ivory
+    #eeede7
+*/
+
+/*
+    Estilos generales del proyecto MotoGP-Desktop
+*/
+
+/* 
+Selector: body → aplica tipografía al proyecto entero
+Specificity: (0, 0, 1)
+ */
+body {
+    background-color: #eeede7; 
+    color: #868b8e; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+ * Specificity: (0,0,0,1)
+ * Fondo del encabezado principal
+ */
+ header {
+    background-color: #b9b7bd; /* Pewter */
+    text-align: center;
+    display: flex;
+    gap: 5rem;
+    /* Herencia: No aplica herencia por defecto */
+}
+
+
+/* 
+ * Specificity: (0,0,0,1) 
+ * Color del texto del título principal <h1>
+ */
+ h1 {
+    color: #e7d2cc; /* Scallop Seashell */
+    /* Herencia: Sobrescribe el color heredado del <body> */
+}
+
+/* 
+ * Specificity: (0,0,0,1) 
+ */
+nav {
+    color: #e7d2cc; /* Scallop Seashell */
+    background-color: #b9b7bd; /* Pewter */
+    text-align: center;
+    margin-top: 2rem;
+    gap: 4rem;
+    /* Herencia: El color se hereda por los <a> si no se sobreescribe */
+}
+
+/* 
+ * Specificity:  (0,0,2) 
+ */
+nav a {
+    color: #eeede7; /* Ivory */
+    text-decoration: none;
+      gap: 2rem;
+    /* Herencia: <a> no hereda color automáticamente, por eso se define directamente */
+}
+
+
