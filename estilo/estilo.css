@@ -3,8 +3,7 @@
     UO288816
     gama cromatica 
 
-    Scallop Seashell
-    #e7d2cc
+    #5c0b12
 
     Pewter
     #b9b7bd
@@ -31,7 +30,7 @@ body {
 }
 
 /* 
- * Specificity: (0,0,0,1)
+ * Specificity: (0,0,1)
  * Fondo del encabezado principal
  */
  header {
@@ -42,21 +41,28 @@ body {
     /* Herencia: No aplica herencia por defecto */
 }
 
+header a{
+    color: #5c0b12;           
+    text-decoration: none; 
+    /* Herencia: No aplica herencia por defecto */
+}
+
 
 /* 
- * Specificity: (0,0,0,1) 
+ * Specificity: (0,0,1) 
  * Color del texto del título principal <h1>
  */
  h1 {
-    color: #e7d2cc; /* Scallop Seashell */
+    color: #5c0b12; 
     /* Herencia: Sobrescribe el color heredado del <body> */
 }
 
+
 /* 
- * Specificity: (0,0,0,1) 
+ * Specificity: (0,0,1) 
  */
 nav {
-    color: #e7d2cc; /* Scallop Seashell */
+    color: #5c0b12; /* Scallop Seashell */
     background-color: #b9b7bd; /* Pewter */
     text-align: center;
     margin-top: 2rem;
@@ -64,14 +70,6 @@ nav {
     /* Herencia: El color se hereda por los <a> si no se sobreescribe */
 }
 
-/* 
- * Specificity:  (0,0,2) 
- */
-nav a {
-    color: #eeede7; /* Ivory */
-    text-decoration: none;
-      gap: 2rem;
-    /* Herencia: <a> no hereda color automáticamente, por eso se define directamente */
-}
+
 
 
