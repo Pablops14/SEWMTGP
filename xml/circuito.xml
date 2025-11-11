@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE circuito SYSTEM "circuito.dtd">
+<circuito version="1.0" idioma="es">
+    <nombre>Chang International Circuit (Buriram)</nombre>
+
+    <!-- Longitud en metros -->
+    <longitud unidad="m">4554</longitud>
+
+    <!-- Anchura media en metros -->
+    <anchura unidad="m">12</anchura>
+
+    <!-- Datos de la carrera: fecha en 2025 y hora española de inicio -->
+    <!-- Hora española en horario de verano (CEST) se indica con +02:00 -->
+    <carrera>
+        <fecha>2025-10-12</fecha>
+        <hora>15:00+02:00</hora>
+        <vueltas>26</vueltas>
+    </carrera>
+
+    <localidad>Buriram</localidad>
+    <pais>Tailandia</pais>
+
+    <patrocinador>Principal Sponsor Ejemplo S.A.</patrocinador>
+
+    <!-- Referencias y bibliografía (mínimo 3) -->
+    <referencias>
+        <referencia url="https://es.wikipedia.org/wiki/Circuito_Internacional_de_Chang"> Wikipedia Chang International</referencia>
+        <referencia url="https://www.dazn.com/es-ES/news/motor/circuito-internacional-chang-donde-esta-como-es-caracteristicas-como-llegar-fotos-escenario-gp-tailandia-mundial-motogp/3gq9jdbf9e1n15psoza85t6zk">Circuito Internacional de Chang: dónde está, cómo es, características, cómo llegar y fotos del escenario del GP de Tailandia del Mundial de MotoGP.</referencia>
+        <referencia url="https://51gt3.com/es/track/chang-international-circuit">Circuito Internacional de Chang</referencia>
+    </referencias>
+
+    <galeria_fotos>
+        <foto fichero="circuitoChangInternational.jpeg" descripcion="Circuito de noche" formato="jpeg" />
+    </galeria_fotos>
+
+    <galeria_videos>
+        <video fichero="Circuito.mp4" descripcion="Video de motorista en el circuito" formato="mp4" duracion_s="240" />
+    </galeria_videos>
+
+    <!-- Punto origen (coordenadas geográficas del centro de la pista en la línea de salida) -->
+    <!-- Coordenadas aproximadas: longitud (E), latitud (N), altitud en metros -->
+    <punto_origen>
+        <longitud_coor>103.0844</longitud_coor>
+        <latitud_coor>14.9587</latitud_coor>
+        <altitud_coor>181</altitud_coor>
+    </punto_origen>
+
+    <!-- Tramos anónimos que definen secciones del circuito -->
+    <!-- Distancia del tramo en metros (atributo unidad="m") y coordenada final del tramo -->
+    <tramos>
+        <!-- Ejemplo: tramo 1 - recta principal -->
+        <tramo>
+            <distancia unidad="m">191</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.0823</longitud_coor_final>
+                <latitud_coor_final>14.9597</latitud_coor_final>
+                <altitud_coor_final>180</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>1</numero_sector>
+        </tramo>
+
+        <!-- tramo 2 - -->
+        <tramo>
+             <distancia unidad="m">983</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08402</longitud_coor_final>
+                <latitud_coor_final>14.96856</latitud_coor_final>
+                <altitud_coor_final>168</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>1</numero_sector>
+        </tramo>
+
+        <!-- tramo 3 - -->
+        <tramo>
+           <distancia unidad="m">84</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08478</longitud_coor_final>
+                <latitud_coor_final>14.96845</latitud_coor_final>
+                <altitud_coor_final>165</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>2</numero_sector>
+        </tramo>
+
+        <!-- tramo 4 - -->
+        <tramo>
+            <distancia unidad="m">919</distancia>
+            <coordenada_final>
+            <longitud_coor_final>103.08375</longitud_coor_final>
+            <latitud_coor_final>14.96019</latitud_coor_final>
+            <altitud_coor_final>179</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>2</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">177</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08564</longitud_coor_final>
+                <latitud_coor_final>14.95889</latitud_coor_final>
+                <altitud_coor_final>178</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>1</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">134</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08625</longitud_coor_final>
+                <latitud_coor_final>14.96010</latitud_coor_final>
+                <altitud_coor_final>182</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>1</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">289</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08472</longitud_coor_final>
+                <latitud_coor_final>14.96125</latitud_coor_final>
+                <altitud_coor_final>179</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>2</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">349</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08511</longitud_coor_final>
+                <latitud_coor_final>14.96439</latitud_coor_final>
+                <altitud_coor_final>174</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>3</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">234</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08722</longitud_coor_final>
+                <latitud_coor_final>14.96455</latitud_coor_final>
+                <altitud_coor_final>174</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>3</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">194</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08629</longitud_coor_final>
+                <latitud_coor_final>14.96282</latitud_coor_final>
+                <altitud_coor_final>178</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>3</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">219</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08799</longitud_coor_final>
+                <latitud_coor_final>14.96158</latitud_coor_final>
+                <altitud_coor_final>177</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>3</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">456</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.08714</longitud_coor_final>
+                <latitud_coor_final>14.95747</latitud_coor_final>
+                <altitud_coor_final>178</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>1</numero_sector>
+        </tramo>
+
+        <tramo>
+            <distancia unidad="m">340</distancia>
+            <coordenada_final>
+                <longitud_coor_final>103.0844</longitud_coor_final>
+                <latitud_coor_final>14.9587</latitud_coor_final>
+                <altitud_coor_final>181</altitud_coor_final>
+            </coordenada_final>
+            <numero_sector>1</numero_sector>
+        </tramo>
+
+    </tramos>
+
+    <!-- Resultado de la carrera: vencedor y tiempo empleado -->
+    <resultado>
+        <vencedor>
+            <nombre_piloto>Francesco Bagnaia</nombre_piloto>
+            <nacionalidad>ITA</nacionalidad>
+        </vencedor>
+        <!-- Formato HH:MM:SS.mmm -->
+        <tiempo_victoria>00:43:38.108</tiempo_victoria>
+    </resultado>
+
+    <!-- Tres primeros de la clasificación del mundial 2025 tras la carrera -->
+    <clasificacion_mundial>
+        <puesto>
+            <posicion>1</posicion>
+            <piloto>Marc Márquez</piloto>
+            <puntos>37</puntos>
+        </puesto>
+        <puesto>
+            <posicion>2</posicion>
+            <piloto>Álex Márquez</piloto>
+            <puntos>29</puntos>
+        </puesto>
+        <puesto>
+            <posicion>3</posicion>
+            <piloto>Francesco Bagnaia</piloto>
+            <puntos>23</puntos>
+        </puesto>
+    </clasificacion_mundial>
+
+</circuito>

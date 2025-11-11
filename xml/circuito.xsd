@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.uniovi.es"
+           xmlns="http://www.uniovi.es"
+           elementFormDefault="qualified">
+
+	<!-- Elemento raíz -->
+	<xs:element name="circuito">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nombre" type="xs:string"/>
+				<xs:element name="longitud" type="LongitudType"/>
+				<xs:element name="anchura" type="AnchuraType"/>
+				<xs:element name="carrera" type="CarreraType"/>
+				<xs:element name="localidad" type="xs:string"/>
+				<xs:element name="pais" type="xs:string"/>
+				<xs:element name="patrocinador" type="xs:string"/>
+				<xs:element name="referencias" type="ReferenciasType"/>
+				<xs:element name="galeria_fotos" type="GaleriaFotosType"/>
+				<xs:element name="galeria_videos" type="GaleriaVideosType"/>
+				<xs:element name="punto_origen" type="PuntoOrigenType"/>
+				<xs:element name="tramos" type="TramosType"/>
+				<xs:element name="resultado" type="ResultadoType"/>
+				<xs:element name="clasificacion_mundial" type="ClasificacionType"/>
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:decimal" use="required"/>
+			<xs:attribute name="idioma" type="xs:language" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Tipo longitud y anchura -->
+	<xs:complexType name="LongitudType">
+		<xs:simpleContent>
+			<xs:extension base="PositiveMetersType">
+				<xs:attribute name="unidad" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="AnchuraType">
+		<xs:simpleContent>
+			<xs:extension base="PositiveMetersType">
+				<xs:attribute name="unidad" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="PositiveMetersType">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="10000"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Carrera -->
+	<xs:complexType name="CarreraType">
+		<xs:sequence>
+			<xs:element name="fecha" type="xs:date"/>
+			<xs:element name="hora" type="HoraType"/>
+			<xs:element name="vueltas" type="VueltasType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="HoraType">
+		<!-- formato hh:mm±hh:mm -->
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{2}:\d{2}(\+\d{2}:\d{2})?"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="VueltasType">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Referencias -->
+	<xs:complexType name="ReferenciasType">
+		<xs:sequence>
+			<xs:element name="referencia" type="ReferenciaType" minOccurs="3" maxOccurs="10"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ReferenciaType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="url" type="xs:anyURI" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<!-- Galerías -->
+	<xs:complexType name="GaleriaFotosType">
+		<xs:sequence>
+			<xs:element name="foto" type="FotoType" minOccurs="1" maxOccurs="5"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="FotoType">
+		<xs:attribute name="fichero" type="xs:string" use="required"/>
+		<xs:attribute name="descripcion" type="xs:string"/>
+		<xs:attribute name="formato" type="xs:string"/>
+		<xs:attribute name="tamaño_kb" type="xs:decimal"/>
+	</xs:complexType>
+
+	<xs:complexType name="GaleriaVideosType">
+		<xs:sequence>
+			<xs:element name="video" type="VideoType" minOccurs="1" maxOccurs="5"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="VideoType">
+		<xs:attribute name="fichero" type="xs:string" use="required"/>
+		<xs:attribute name="descripcion" type="xs:string"/>
+		<xs:attribute name="formato" type="xs:string"/>
+		<xs:attribute name="duracion_s" type="DuracionType"/>
+	</xs:complexType>
+
+	<xs:simpleType name="DuracionType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="3600"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Coordenadas -->
+	<xs:complexType name="PuntoOrigenType">
+		<xs:sequence>
+			<xs:element name="longitud_coor" type="CoordenadaType"/>
+			<xs:element name="latitud_coor" type="CoordenadaType"/>
+			<xs:element name="altitud_coor" type="AltitudType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="CoordenadaType">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="-180"/>
+			<xs:maxInclusive value="180"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="AltitudType">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="-100"/>
+			<xs:maxInclusive value="9000"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Tramos -->
+	<xs:complexType name="TramosType">
+		<xs:sequence>
+			<xs:element name="tramo" type="TramoType" minOccurs="1" maxOccurs="100"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="TramoType">
+		<xs:sequence>
+			<xs:element name="distancia" type="DistanciaType"/>
+			<xs:element name="coordenada_final" type="CoordenadaFinalType"/>
+			<xs:element name="numero_sector" type="NumeroSectorType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="DistanciaType">
+		<xs:simpleContent>
+			<xs:extension base="PositiveMetersType">
+				<xs:attribute name="unidad" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="CoordenadaFinalType">
+		<xs:sequence>
+			<xs:element name="longitud_coor_final" type="CoordenadaType"/>
+			<xs:element name="latitud_coor_final" type="CoordenadaType"/>
+			<xs:element name="altitud_coor_final" type="AltitudType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="NumeroSectorType">
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Resultado -->
+	<xs:complexType name="ResultadoType">
+		<xs:sequence>
+			<xs:element name="vencedor" type="VencedorType"/>
+			<xs:element name="tiempo_victoria" type="TiempoType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="VencedorType">
+		<xs:sequence>
+			<xs:element name="nombre_piloto" type="xs:string"/>
+			<xs:element name="nacionalidad" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="TiempoType">
+		<!-- Formato HH:MM:SS.mmm -->
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{2}:\d{2}:\d{2}\.\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!-- Clasificación -->
+	<xs:complexType name="ClasificacionType">
+		<xs:sequence>
+			<xs:element name="puesto" type="PuestoType" minOccurs="1" maxOccurs="20"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="PuestoType">
+		<xs:sequence>
+			<xs:element name="posicion" type="xs:positiveInteger"/>
+			<xs:element name="piloto" type="xs:string"/>
+			<xs:element name="puntos" type="PuntosType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="PuntosType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+</xs:schema>

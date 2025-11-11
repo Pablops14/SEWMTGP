@@ -1,0 +1,109 @@
+/*
+    Pablo Pérez Saavedra
+    UO288816
+    layout.css - Esquema de posicionamiento del proyecto MotoGP-Desktop
+*/
+
+/* ===========================
+   FLEXBOX en el encabezado
+   =========================== */
+
+/* 
+ * Specificity: (0,0,1)
+ */
+ header {
+    display: flex;
+    flex-direction: row;        /* Elementos en fila */
+    justify-content: space-between; /* Espaciado entre h1 y nav */
+    align-items: center;        /* Centra verticalmente */
+    flex-wrap: wrap;            /* Permite que se adapte en pantallas pequeñas */
+    padding: 1rem 2rem;
+}
+
+
+/* 
+ * Specificity: (0,0,1)
+ */
+nav {
+    display: flex;
+    flex-direction: row;        /* Coloca los enlaces en línea */
+    flex-wrap: wrap;            /* Los enlaces bajan de línea si no caben */
+    gap: 1rem;                  /* Espacio entre enlaces */
+    justify-content: center;    /* Centra los enlaces horizontalmente */
+    align-items: center;        /* Centra verticalmente */
+}
+
+/*
+ * Specificity: (0,0,2)
+ */
+nav a {
+    flex: 0 1 auto;             
+    text-align: center;
+    padding: 0.5rem 1rem;
+}
+
+/* 
+ * Specificity: (0,0,2)
+ */
+header h1 {
+    flex: 0 1 auto;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+
+/* 
+ * Adaptación para dispositivos móviles
+ * Tamaño: desde 320px hasta 799px de ancho
+ */
+ @media (min-width: 320px) and (max-width: 799px) {
+
+    /* 
+     * Redefinición: flex-direction y alineación en header
+     * Comentario obligatorio: se redefine flex-direction y align-items
+     * Specificity: (0,0,1)
+     */
+    header {
+        flex-direction: column;      /* Redefinido: de row → column */
+        align-items: center;         /* Redefinido: centrado en vertical */
+    }
+
+    /* 
+     * Redefinición: comportamiento flex en nav
+     * Comentario obligatorio: se redefine flex-direction y justify-content
+     * Specificity: (0,0,1)
+     */
+    nav {
+        flex-direction: column;      /* Redefinido: de row → column */
+        justify-content: center;     /* Redefinido: centrado */
+        align-items: center;         /* Redefinido: centrado */
+        gap: 0.5rem;                 /* Espacio reducido entre enlaces */
+    }
+
+    /*
+     * Redefinición: visualización del párrafo con migas de navegación
+     * Comentario obligatorio: se redefine display
+     * Specificity: (0,1,2)
+     */
+    body > p:first-of-type {
+        display: none;               /* Oculta las migas en móviles */
+    }
+
+    /*
+     * Adaptación de elementos multimedia
+     * Sin redefinición previa, se aplican nuevas reglas
+     * Specificity: (0,0,1)
+     */
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+    /*
+    * Specificity: (0,0,2)
+    */
+    audio {
+        width: 100%;
+    }
+}
+

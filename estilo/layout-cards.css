@@ -1,0 +1,55 @@
+/* Aplicar grid solo a main que contiene las cartas */
+/* especificidad: 001 */
+main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
+    gap: 1.5rem; /* espacio relativo entre cartas */
+    padding: 1.5rem;
+}
+
+/* Hacer que el primer hijo h2 ocupe toda la primera fila */
+/* especificidad: 012 */
+main > h2:first-child {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2rem; /* tamaño relativo para el título */
+    margin-bottom: 1rem;
+}
+
+/* Estilos de cada carta */
+/* especificidad: 002 */
+main > article {
+    text-align: center;
+    border: 0.125rem solid #ccc; /* equivalente a 2px */
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+}
+
+/* Imágenes dentro de las cartas */
+/* especificidad: 003 */
+main > article > img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        gap: 1rem; /* ajustar espacio entre cartas si se desea */
+        padding: 1rem;
+    }
+
+    main > h2:first-child {
+        grid-column: 1 / -1; /* título sigue ocupando toda la fila */
+        font-size: 1.5rem; /* opcional: tamaño un poco menor en móviles */
+    }
+
+    main > article {
+        padding: 0.75rem; /* un poco menos de padding para pantallas pequeñas */
+    }
+}

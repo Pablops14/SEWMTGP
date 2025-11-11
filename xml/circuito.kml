@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Circuito</name>
+  <Style id="trackStyle">
+    <LineStyle>
+      <width>3</width>
+    </LineStyle>
+  </Style>
+  <Placemark>
+    <name>Recorrido circuito</name>
+    <styleUrl>#trackStyle</styleUrl>
+    <LineString>
+      <tessellate>1</tessellate>
+      <coordinates>
+      103.0844,14.9587,181.0
+      103.0823,14.9597,180.0
+      103.08402,14.96856,168.0
+      103.08478,14.96845,165.0
+      103.08375,14.96019,179.0
+      103.08564,14.95889,178.0
+      103.08625,14.9601,182.0
+      103.08472,14.96125,179.0
+      103.08511,14.96439,174.0
+      103.08722,14.96455,174.0
+      103.08629,14.96282,178.0
+      103.08799,14.96158,177.0
+      103.08714,14.95747,178.0
+      103.0844,14.9587,181.0
+      </coordinates>
+    </LineString>
+  </Placemark>
+  <Placemark>
+    <name>Punto Origen</name>
+    <Point>
+      <coordinates>103.0844,14.9587,181.0</coordinates>
+    </Point>
+  </Placemark>
+
+</Document>
+</kml>

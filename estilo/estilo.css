@@ -31,19 +31,23 @@ body {
 
 /* 
  * Specificity: (0,0,1)
- * Fondo del encabezado principal
+ *
  */
  header {
     background-color: #b9b7bd; /* Pewter */
     text-align: center;
-    display: flex;
-    gap: 5rem;
     /* Herencia: No aplica herencia por defecto */
 }
 
+
+/* 
+ * Specificity: (0,0,2)
+ * 
+ */
 header a{
     color: #5c0b12;           
     text-decoration: none; 
+    text-decoration-line: none;
     /* Herencia: No aplica herencia por defecto */
 }
 
@@ -64,12 +68,40 @@ header a{
 nav {
     color: #5c0b12; /* Scallop Seashell */
     background-color: #b9b7bd; /* Pewter */
-    text-align: center;
     margin-top: 2rem;
-    gap: 4rem;
     /* Herencia: El color se hereda por los <a> si no se sobreescribe */
 }
 
+/* 
+ * Specificity: (0,1,2) 
+ */
+nav a.active {
+    color: #91414c; 
+}
+
+/* 
+ * Specificity: (0,1,2) 
+ */
+body > p:first-of-type {
+    font-size: 0.75rem; /* Tamaño más pequeño */
+}
+
+/* 
+ * Enlace visitado 
+ * Specificity: (0,1,2)
+ */
+ header a:visited {
+    color: #4a0910;
+}
+
+/* 
+ * Enlace al pasar el ratón (hover)
+ * Specificity: (0,1,2)
+ */
+header a:hover {
+    color: #91414c; 
+    text-decoration-line: underline; /* Subraya solo al pasar el ratón */
+}
 
 
 

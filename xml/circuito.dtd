@@ -1,0 +1,99 @@
+<!-- circuito.dtd -->
+<!ELEMENT circuito (
+    nombre,
+    longitud,
+    anchura,
+    carrera,
+    localidad,
+    pais,
+    patrocinador,
+    referencias,
+    galeria_fotos,
+    galeria_videos,
+    punto_origen,
+    tramos,
+    resultado,
+    clasificacion_mundial
+)>
+
+<!ATTLIST circuito
+    version CDATA #IMPLIED
+    idioma CDATA #IMPLIED
+>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!-- longitud y anchura tienen atributo unidad (m, metros) -->
+<!ELEMENT longitud (#PCDATA)>
+<!ATTLIST longitud unidad CDATA #REQUIRED>
+
+<!ELEMENT anchura (#PCDATA)>
+<!ATTLIST anchura unidad CDATA #REQUIRED>
+
+<!-- datos de la carrera: fecha (YYYY-MM-DD), hora (HH:MM con zona) y vueltas -->
+<!ELEMENT carrera (fecha, hora, vueltas)>
+<!ELEMENT fecha (#PCDATA)>
+<!ELEMENT hora (#PCDATA)>
+<!ELEMENT vueltas (#PCDATA)>
+
+<!ELEMENT localidad (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ELEMENT patrocinador (#PCDATA)>
+
+<!-- referencias: mínimo 3 referencias (DTD no puede forzar mínimo exacto muy robustamente,
+     pero el contenido de ejemplo tendrá 3 elementos 'referencia') -->
+<!ELEMENT referencias (referencia+)>
+<!ELEMENT referencia (#PCDATA)>
+<!ATTLIST referencia url CDATA #IMPLIED>
+
+<!-- galería de fotos: entre 1 y 5 fotos. Usamos foto element y no podemos imponer el máximo exacto con DTD,
+     pero la gramática admite repetidos y se documenta el límite en comentarios -->
+<!ELEMENT galeria_fotos (foto+)>
+<!ELEMENT foto EMPTY>
+<!ATTLIST foto
+    fichero CDATA #REQUIRED
+    descripcion CDATA #IMPLIED
+    formato CDATA #IMPLIED
+    tamaño_kb CDATA #IMPLIED
+>
+
+<!-- galería de videos: entre 1 y 3 videos -->
+<!ELEMENT galeria_videos (video+)>
+<!ELEMENT video EMPTY>
+<!ATTLIST video
+    fichero CDATA #REQUIRED
+    descripcion CDATA #IMPLIED
+    formato CDATA #IMPLIED
+    duracion_s CDATA #IMPLIED
+>
+
+<!-- punto origen con coordenadas (longitud, latitud, altitud) -->
+<!ELEMENT punto_origen (longitud_coor, latitud_coor, altitud_coor)>
+<!ELEMENT longitud_coor (#PCDATA)>
+<!ELEMENT latitud_coor (#PCDATA)>
+<!ELEMENT altitud_coor (#PCDATA)>
+
+<!-- tramos: colección de tramo elements -->
+<!ELEMENT tramos (tramo+)>
+<!ELEMENT tramo (distancia, coordenada_final, numero_sector)>
+<!ELEMENT distancia (#PCDATA)>
+<!ATTLIST distancia unidad CDATA #REQUIRED>
+<!ELEMENT coordenada_final (longitud_coor_final, latitud_coor_final, altitud_coor_final)>
+<!ELEMENT longitud_coor_final (#PCDATA)>
+<!ELEMENT latitud_coor_final (#PCDATA)>
+<!ELEMENT altitud_coor_final (#PCDATA)>
+<!ELEMENT numero_sector (#PCDATA)>
+
+<!-- resultado de la carrera: vencedor y tiempo -->
+<!ELEMENT resultado (vencedor, tiempo_victoria)>
+<!ELEMENT vencedor (nombre_piloto, nacionalidad)>
+<!ELEMENT nombre_piloto (#PCDATA)>
+<!ELEMENT nacionalidad (#PCDATA)>
+<!ELEMENT tiempo_victoria (#PCDATA)>
+
+<!-- clasificación mundial (top 3 después de la carrera) -->
+<!ELEMENT clasificacion_mundial (puesto+)>
+<!ELEMENT puesto (posicion, piloto, puntos)>
+<!ELEMENT posicion (#PCDATA)>
+<!ELEMENT piloto (#PCDATA)>
+<!ELEMENT puntos (#PCDATA)>
