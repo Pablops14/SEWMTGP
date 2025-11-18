@@ -37,8 +37,8 @@ class Ciudad {
 
     // Método que escribe las coordenadas en el documento con document.write()
     escribirCoordenadasEnDocumento() {
-        document.write(
-            `<p>Latitud: ${this.latitud}, Longitud: ${this.longitud}, Altitud: ${this.altitud} m</p>`
-        );
+        const p = document.createElement("p");
+        p.textContent = `Latitud: ${this.latitud}, Longitud: ${this.longitud}, Altitud: ${this.altitud} m`;
+        document.body.appendChild(p);
     }
 }

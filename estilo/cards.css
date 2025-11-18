@@ -20,6 +20,11 @@ main article[data-estado=volteada] {
     transform: rotateY(180deg);
 }
 
+/* especificidad: 012 */
+main article[data-estado=revelada] {
+    transform: rotateY(180deg);
+}
+
 /* Reglas con los estilos generales para el encabezado y la imagen de la carta */
 /* especificidad: 002 */
 /* especificidad: 002 */

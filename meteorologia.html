@@ -38,9 +38,15 @@
         // Crear objeto de la clase Pais
         var ciudad = new Ciudad("Buriram", "Tailandia", "Tailandés");
         ciudad.inicializarDatos(123000,14.995556, 103.101111, 180);
-        document.write(`<h3>${ciudad.obtenerNombreCiudad()} (${ciudad.obtenerNombrePais()})</h3>`);
-        document.write(ciudad.obtenerInformacionSecundaria());
-        document.write(`<p>Latitud: ${ciudad.latitud}, Longitud: ${ciudad.longitud}, Altitud: ${ciudad.altitud} m</p>`);
+        const h3 = document.createElement("h3");
+        h3.textContent = `${ciudad.obtenerNombreCiudad()} (${ciudad.obtenerNombrePais()})`;
+        document.body.appendChild(h3);
+
+        const info = document.createElement("p");
+        info.innerHTML = ciudad.obtenerInformacionSecundaria();
+        document.body.appendChild(info);
+        
+        ciudad.escribirCoordenadasEnDocumento();
     </script>
 </body>
 </html>
