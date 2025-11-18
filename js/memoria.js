@@ -1,105 +1,98 @@
-/**
- * Autor: Pablo Pérez Saavedra
- * 
- */
 class Memoria {
+    // Atributos privados
+    #primeraCarta;
+    #segundaCarta;
+    #tableroBloqueado;
+    #cronometro;
+
     constructor() {
-        this.primera_carta = null;
-        this.segunda_carta = null;
-        this.barajarCartas();
-        this.tablero_bloqueado = false;
+        this.#primeraCarta = null;
+        this.#segundaCarta = null;
+        this.#tableroBloqueado = false;
 
-        this.cronometro = new Cronometro();
-        this.cronometro.arrancar();
-    }
+        this.#barajarCartas();
 
-
-    voltearCarta(carta) {    
-        if (this.tablero_bloqueado) return;   
-        if (carta === this.primera_carta) return;
-        if (carta.classList.contains("revelada")) return;
-        carta.dataset.estado = "volteada";
-
-        if (!this.primera_carta) {
-            this.primera_carta = carta; 
-            return;
-        }
-
-        this.segunda_carta = carta; 
-
-        this.tablero_bloqueado = true;
-        this.comprobarPareja();
+        this.#cronometro = new Cronometro();
+        this.#cronometro.arrancar();
     }
 
     activarEventos() {
         const cartas = document.querySelectorAll("main > article");
-
         cartas.forEach(carta => {
             carta.addEventListener("click", (event) => {
-                this.voltearCarta(event.currentTarget);
+                this.#voltearCarta(event.currentTarget);
             });
         });
     }
-    
-    barajarCartas() {
-        const contenedor = document.querySelector("main"); // contenedor principal
-        const cartas = Array.from(contenedor.querySelectorAll("article")); // solo las cartas
+
+    #voltearCarta(carta) {
+        if (this.#tableroBloqueado) return;
+        if (carta === this.#primeraCarta) return;
+        if (carta.classList.contains("revelada")) return;
+
+        carta.dataset.estado = "volteada";
+
+        if (!this.#primeraCarta) {
+            this.#primeraCarta = carta;
+            return;
+        }
+
+        this.#segundaCarta = carta;
+        this.#tableroBloqueado = true;
+
+        this.#comprobarPareja();
+    }
+
+
+    #barajarCartas() {
+        const contenedor = document.querySelector("main");
+        const cartas = Array.from(contenedor.querySelectorAll("article"));
 
         for (let i = cartas.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            const temp = cartas[i];
-            cartas[i] = cartas[j];
-            cartas[j] = temp;
+            [cartas[i], cartas[j]] = [cartas[j], cartas[i]];
         }
 
-        // Reinsertamos las cartas en el mismo contenedor
         cartas.forEach(carta => contenedor.appendChild(carta));
     }
-    reiniciarAtributos() {
-        this.tablero_bloqueado = false;
-        this.primera_carta = null;
-        this.segunda_carta = null;
+
+
+    #reiniciarAtributos() {
+        this.#tableroBloqueado = false;
+        this.#primeraCarta = null;
+        this.#segundaCarta = null;
     }
 
-    deshabilitarCartas() {
-        this.primera_carta.classList.add("revelada");
-        this.segunda_carta.classList.add("revelada");
-        this.comprobarJuego();
-        this.reiniciarAtributos();
+    #deshabilitarCartas() {
+        this.#primeraCarta.classList.add("revelada");
+        this.#segundaCarta.classList.add("revelada");
+
+        this.#comprobarJuego();
+        this.#reiniciarAtributos();
     }
 
-    comprobarJuego() {
-        const contenedor = document.querySelector("main"); // contenedor principal
-        const cartas = Array.from(contenedor.querySelectorAll("article")); // solo las cartas
-        const todasReveladas = Array.from(cartas).every(carta => carta.classList.contains("revelada"));
-        console.log(todasReveladas);
-        if (todasReveladas) {
-            this.cronometro.parar();
+    #comprobarJuego() {
+        const cartas = Array.from(document.querySelectorAll("main > article"));
+        const todas = cartas.every(carta => carta.classList.contains("revelada"));
+
+        if (todas) {
+            this.#cronometro.parar();
         }
     }
 
-    cubrirCartas() {
-        // Bloqueamos el tablero para evitar interacciones mientras se voltean las cartas
-        this.tablero_bloqueado = true;
-
-        // Usamos setTimeout para esperar 1.5 segundos antes de poner las cartas bocabajo
+    #cubrirCartas() {
         setTimeout(() => {
-            this.primera_carta.removeAttribute("data-estado");
-            this.segunda_carta.removeAttribute("data-estado");
-            this.reiniciarAtributos();
-        }, 1500); // 1500 ms = 1,5 segundos
+            this.#primeraCarta.removeAttribute("data-estado");
+            this.#segundaCarta.removeAttribute("data-estado");
+            this.#reiniciarAtributos();
+        }, 1500);
     }
 
-    comprobarPareja() {
-        if (!this.primera_carta || !this.segunda_carta) return;
-        const img1 = this.primera_carta.querySelector("img");
-        const img2 = this.segunda_carta.querySelector("img");
+    #comprobarPareja() {
+        const img1 = this.#primeraCarta.querySelector("img");
+        const img2 = this.#segundaCarta.querySelector("img");
 
-        const sonIguales = img1.getAttribute("alt") === img2.getAttribute("alt");
-
-        sonIguales ? this.deshabilitarCartas() : this.cubrirCartas();
+        const iguales = img1.alt === img2.alt;
+        iguales ? this.#deshabilitarCartas() : this.#cubrirCartas();
     }
-  }
-
-
-  
+}
