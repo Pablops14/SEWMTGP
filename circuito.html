@@ -12,7 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="circuito.js"></script>
 </head>
 
 <body>
@@ -31,6 +35,10 @@
 </header>
     <p>Estás en: <a href="index.html">Inicio</a> >> <strong>Circuito</strong></p>
     <h2>Información relativa a los circuitos de MotoGP</h2>
-    <p> en desarrollo </p>
+    <input type="file" name="archivo" accept=".html">
+    <input type="file" accept=".svg" onchange="cargadorSVG.leerArchivoSVG(this.files[0])">
+    <p>Selecciona el archivo circuito.kml:</p>
+    <input type="file" accept=".kml" onchange="cargadorKML.leerArchivoKML(this.files[0])">
+    <div></div>
 </body>
 </html>

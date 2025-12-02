@@ -107,3 +107,50 @@ header h1 {
     }
 }
 
+/* 
+ * Specificity: (0,0,3)
+ */
+article h2 + img {
+    display: block;       /* Bloque para poder dimensionar */
+    max-width: 100%;      /* Que no exceda el ancho del contenedor */
+    height: auto;         /* Mantener proporción */
+    margin: 0 auto;       /* Centrar la imagen */
+}
+
+/* 
+ * Specificity: (0,0,1) 
+ */
+div {
+    width: 100%;
+    height: 50vh;
+}
+
+
+/* Media query para dispositivos móviles (pantallas menores a 768px) */
+@media (max-width: 768px) {
+/* 
+ * Specificity: (0,0,2)
+ */
+    article h2 {
+        font-size: 1.2em;  /* Ajustar tamaño del título */
+        text-align: center;
+    }
+/* 
+ * Specificity: (0,0,3)
+ */
+    article h2 + img {
+        width: 100%;       /* Imagen ocupa todo el ancho */
+        height: auto;      /* Mantener proporción */
+    }
+
+   /* 
+ * Specificity: (0,1,1)
+ */ 
+    div {
+        width: 100%;         /* Ancho completo en móviles */
+        height: 60vh;      /* Altura reducida en móviles */
+    }
+}
+
+
+
