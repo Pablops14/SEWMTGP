@@ -73,10 +73,17 @@ nav {
 }
 
 /* 
+ * Specificity: (0,0,2) 
+ */
+nav a{
+    color: #4a0910;
+}
+
+/* 
  * Specificity: (0,1,2) 
  */
 nav a.active {
-    color: #5c0b12;
+    color: #4a0910;
 }
 
 
