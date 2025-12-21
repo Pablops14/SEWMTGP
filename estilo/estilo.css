@@ -108,7 +108,7 @@ body > p:first-of-type {
  * Specificity: (0,1,2)
  */
 header a:hover {
-    color: #91414c; 
+    color: #4a0910; 
     text-decoration-line: underline; /* Subraya solo al pasar el ratón */
 }
 
