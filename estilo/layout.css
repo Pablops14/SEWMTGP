@@ -117,11 +117,11 @@ article h2 + img {
     margin: 0 auto;       /* Centrar la imagen */
 }
 
-/* 
- * Specificity: (0,0,1) 
+/* IMPORTANTE: El mapa funciona abriendo el html, no se por que abriendolo con el xampp no va bien
+ * Specificity: (0,0,2) 
  */
 body >div {
-    height: 70vh;  
+    height: 70vh;
 }
 
 
@@ -141,7 +141,12 @@ body >div {
         width: 100%;       /* Imagen ocupa todo el ancho */
         height: auto;      /* Mantener proporción */
     }
-
+/* 
+ * Specificity: (0,0,2)
+ */
+    body >div {
+        height: 50vh;  
+    }
 }
 
 

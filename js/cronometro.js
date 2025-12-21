@@ -59,3 +59,8 @@ class Cronometro {
     }
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+    window.cronometro = new Cronometro();
+});
+
+

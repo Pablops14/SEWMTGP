@@ -174,21 +174,21 @@ if (isset($_POST['guardar_observador'])) {
     <meta name="description" content="Test de MotoGP-Desktop" />
     <meta name="keywords" content="MotoGP" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="../estilo/layout.css"/>
 </head>
 
 <body>
 <header>
-    <h1><a href="index.html">MotoGP Desktop</a></h1>
+    <h1><a href="../index.html">MotoGP Desktop</a></h1>
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="piloto.html">Piloto</a>
-        <a href="circuito.html">Circuito</a>
-        <a href="meteorologia.html">Meteorologia</a>
-        <a href="clasificaciones.php">Clasificaciones</a>
-        <a href="juegos.html">Juegos</a>
-        <a href="ayuda.html">Ayuda</a>
+        <a href="../index.html">Inicio</a>
+        <a href="../piloto.html">Piloto</a>
+        <a href="../circuito.html">Circuito</a>
+        <a href="../meteorologia.html">Meteorologia</a>
+        <a href="../clasificaciones.php">Clasificaciones</a>
+        <a href="../juegos.html">Juegos</a>
+        <a href="../ayuda.html">Ayuda</a>
     </nav>
 </header>
 
