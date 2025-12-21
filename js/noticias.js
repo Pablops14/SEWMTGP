@@ -2,7 +2,7 @@ class Noticias {
 
     constructor(busqueda) {
         this.busqueda = busqueda;
-        this.url = "https://api.thenewsapi.com/v1/news/all";
+        this.url = "https://api.thenewsapi.com/v1/news/top";
         this.apiKey = "cEtSuVWg2gT4wjfNBGZTsWGsPTbhjll06swdCvKk"; 
     }
 

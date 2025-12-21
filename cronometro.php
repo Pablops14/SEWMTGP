@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </nav>
     </header>
     <main>
-        <p>Estás en: <a href="index.html">Inicio</a> >> Cronómetro</p>
+        <p>Estás en: <a href="index.html">Inicio</a> >> <a href="juegos.html">Juegos</a> >> Cronómetro</p>
         <h2>Prueba de funcionamiento del cronómetro</h2>
 
         <form method="post">
