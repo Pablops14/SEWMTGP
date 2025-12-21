@@ -76,9 +76,9 @@ nav {
  * Specificity: (0,1,2) 
  */
 nav a.active {
-    color: #91414c; 
+    color: #000000; 
+    background-color: #ffffff;
 }
-
 
 
 /* 

@@ -7,7 +7,7 @@ class Noticias {
     }
 
     buscar() {
-        const endpoint = `${this.url}?api_token=${this.apiKey}&search=${this.busqueda}&language=es&limit=5`;
+        const endpoint = `${this.url}?api_token=${this.apiKey}&search=${this.busqueda}&locale=es&limit=5`;
 
         return fetch(endpoint)
             .then(response => {
