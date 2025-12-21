@@ -7,7 +7,7 @@ main {
     padding: 1.5rem;
 }
 
-/* Hacer que el primer hijo h2 ocupe toda la primera fila */
+/* Hacer que el primer hijo h2 ocupe toda la primera fila */  
 /* especificidad: 012 */
 main > h2:first-child {
     grid-column: 1 / -1;

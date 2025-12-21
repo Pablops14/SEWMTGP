@@ -47,10 +47,11 @@ class Cronometro {
 }
 // --- Lógica de interfaz ---
 session_start();
-if (!isset($_SESSION['cronometro'])) {
-    $_SESSION['cronometro'] = new Cronometro();
+if (!isset($_SESSION['cronometro_menu'])) {
+    $_SESSION['cronometro_menu'] = new Cronometro();
 }
-$cronometro = $_SESSION['cronometro'];
+$cronometro = $_SESSION['cronometro_menu'];
+
 
 $mensaje = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -90,14 +91,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <a href="piloto.html">Piloto</a>
             <a href="circuito.html">Circuito</a>
             <a href="meteorologia.html">Meteorologia</a>
-            <a href="clasificaciones.html">Clasificaciones</a>
+            <a href="clasificaciones.php">Clasificaciones</a>
             <a href="juegos.html">Juegos</a>
             <a href="ayuda.html">Ayuda</a>
             <a href="cronometro.php" class="active">Cronómetro</a>
         </nav>
     </header>
     <main>
-        <p>Estás en: <a href="index.html">Inicio</a> >> <strong>Cronómetro</strong></p>
+        <p>Estás en: <a href="index.html">Inicio</a> >> Cronómetro</p>
         <h2>Prueba de funcionamiento del cronómetro</h2>
 
         <form method="post">

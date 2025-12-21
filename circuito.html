@@ -28,7 +28,7 @@
         <a href="piloto.html" title="Información del piloto">Piloto</a>
         <a href="circuito.html" class="active" title="Información del circuito">Circuito</a>
         <a href="meteorologia.html" title="Información sobre la meteorología">Meteorologia</a>
-        <a href="clasificaciones.html" title="Información sobre las clasificaciones">Clasificaciones</a>
+        <a href="clasificaciones.php" title="Información sobre las clasificaciones">Clasificaciones</a>
         <a href="juegos.html" title="Juegos del proyecto MotoGP-Desktop">Juegos</a>
         <a href="ayuda.html" title="Ayuda del proyecto MotoGP-Desktop">Ayuda</a>
     </nav>
@@ -39,6 +39,8 @@
     <input type="file" accept=".svg" onchange="cargadorSVG.leerArchivoSVG(this.files[0])">
     <p>Selecciona el archivo circuito.kml:</p>
     <input type="file" accept=".kml" onchange="cargadorKML.leerArchivoKML(this.files[0])">
-    <div></div>
+    <div id="mapa"></div>
+
+
 </body>
 </html>
