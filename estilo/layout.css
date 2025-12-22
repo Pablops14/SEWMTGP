@@ -147,6 +147,10 @@ body >div {
     body >div {
         height: 50vh;  
     }
+/* 
+ * Specificity: (0,0,2)
+ */
+    main table { font-size: 0.85rem; }
 }
 
 
